@@ -8,29 +8,29 @@
     <title>Umair ❤ Rahfath Love Journey (Since 2019-08-15)</title>
     <meta
       name="description"
-      content="Umair and Rahfath's love journey since 2019-08-15 — love duration, next anniversary countdown, and birthday countdowns."
+      content="Umair and Rahfath's love journey since 2019-08-15 (5:30 PM) — live love duration, next anniversary countdown, and birthday countdowns."
     />
     <meta
       name="keywords"
       content="Umair,Rahfath,Umair and Rahfath,love journey,love story,relationship journey,anniversary countdown,birthday countdown,since 2019-08-15"
     />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="author" content="Umair & Rahfath" />
     <meta name="theme-color" content="#0b1020" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <!-- Canonical (replace with your real URL) -->
-    <link rel="canonical" href="https://example.com/umair-rahfath-love-journey" />
+    <!-- Canonical (your real URL) -->
+    <link rel="canonical" href="https://mohamed-umair01.github.io/" />
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="Umair ❤ Rahfath Love Journey" />
     <meta property="og:title" content="Umair ❤ Rahfath Love Journey (Since 2019-08-15)" />
     <meta
       property="og:description"
-      content="Track Umair and Rahfath's love duration, next anniversary countdown, and birthdays — since 2019-08-15."
+      content="Track Umair and Rahfath's love duration, next anniversary countdown, and birthdays — since 2019-08-15 (5:30 PM)."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/umair-rahfath-love-journey" />
+    <meta property="og:url" content="https://mohamed-umair01.github.io/" />
     <meta
       property="og:image"
       content="https://raw.githubusercontent.com/AATHILDUCKY/ethical-hacking-short-notes/main/aathil%20ducky.png"
@@ -42,7 +42,7 @@
     <meta name="twitter:title" content="Umair ❤ Rahfath Love Journey (Since 2019-08-15)" />
     <meta
       name="twitter:description"
-      content="Umair and Rahfath's love journey since 2019-08-15 — duration + next anniversary + birthdays."
+      content="Umair and Rahfath's love journey since 2019-08-15 (5:30 PM) — duration + next anniversary + birthdays."
     />
     <meta
       name="twitter:image"
@@ -204,7 +204,7 @@
         z-index: 90;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -115%); /* default above pointer */
+        transform: translate(-50%, -115%);
         padding: 12px 14px;
         border-radius: 18px;
         background: rgba(255, 255, 255, 0.10);
@@ -216,7 +216,6 @@
         pointer-events: none;
         min-width: 240px;
       }
-
       .love-popup::after {
         content: "";
         position: absolute;
@@ -231,23 +230,56 @@
         backdrop-filter: blur(14px);
       }
 
+      /* Bottom-right tiny clock */
+      .mini-clock {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        z-index: 95;
+        pointer-events: none;
+        font-size: 10px;
+        line-height: 1.1;
+        padding: 6px 8px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+        letter-spacing: 0.2px;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .heart-float, .blob, .love-card, .shine::after { animation: none !important; transition: none !important; }
       }
     </style>
 
+    <!-- Structured Data (SEO) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Umair and Rahfath Love Journey",
-        "description": "Umair and Rahfath's love journey since 2019-08-15 — love duration, next anniversary countdown, and birthday countdowns.",
-        "url": "https://example.com/umair-rahfath-love-journey",
-        "inLanguage": "en",
-        "isFamilyFriendly": true,
-        "about": [
-          { "@type": "Person", "name": "Umair", "birthDate": "2002-06-18" },
-          { "@type": "Person", "name": "Rahfath", "birthDate": "2002-03-22" }
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://mohamed-umair01.github.io/#website",
+            "url": "https://mohamed-umair01.github.io/",
+            "name": "Umair ❤ Rahfath Love Journey",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://mohamed-umair01.github.io/#webpage",
+            "url": "https://mohamed-umair01.github.io/",
+            "name": "Umair ❤ Rahfath Love Journey (Since 2019-08-15)",
+            "description": "Umair and Rahfath's love journey since 2019-08-15 (5:30 PM) — love duration, next anniversary countdown, and birthday countdowns.",
+            "isPartOf": { "@id": "https://mohamed-umair01.github.io/#website" },
+            "inLanguage": "en",
+            "about": [
+              { "@type": "Person", "name": "Umair", "birthDate": "2002-06-18" },
+              { "@type": "Person", "name": "Rahfath", "birthDate": "2002-03-22" }
+            ]
+          }
         ]
       }
     </script>
@@ -256,8 +288,15 @@
   <body class="bg-aurora noise text-white min-h-screen font-sans">
     <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
 
+    <!-- Bottom-right current time (small) -->
+    <div class="mini-clock" aria-hidden="true">
+      <div id="clockTime">00:00:00</div>
+      <div id="clockDate" style="opacity:.75">0000-00-00</div>
+    </div>
+
     <div class="relative z-10">
       <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+        <!-- Top bar -->
         <div class="flex items-center justify-between gap-4 mb-10">
           <div class="flex items-center gap-3">
             <div class="h-10 w-10 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center shadow-glow2">
@@ -280,6 +319,7 @@
           </div>
         </div>
 
+        <!-- Hero -->
         <header class="text-center mb-12">
           <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-300 via-pink-200 to-indigo-200">Umair</span>
@@ -295,14 +335,9 @@
             A love counter page for <span class="highlight">Umair</span> and <span class="highlight">Rahfath</span>.
             Live timers, smooth animations, and a surprise that appears right where you tap.
           </p>
-
-          <div class="mt-7 flex flex-wrap justify-center gap-2">
-            <span class="inline-flex items-center gap-2 rounded-full bg-white/6 border border-white/14 px-4 py-2 text-xs sm:text-sm text-white/80">✨ Glass UI</span>
-            <span class="inline-flex items-center gap-2 rounded-full bg-white/6 border border-white/14 px-4 py-2 text-xs sm:text-sm text-white/80">💗 Love theme</span>
-            <span class="inline-flex items-center gap-2 rounded-full bg-white/6 border border-white/14 px-4 py-2 text-xs sm:text-sm text-white/80">⏳ Leap-safe countdown</span>
-          </div>
         </header>
 
+        <!-- Cards -->
         <section aria-label="Love Journey Cards">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div class="love-card shine tilt rounded-2xl p-6 shadow-glow2" data-aos="fade-up" data-aos-delay="0">
@@ -429,14 +464,11 @@
 
         <footer class="text-center text-white/60 mt-12">
           <p class="text-sm">Created with love by Umair & Rahfath</p>
-          <p class="text-xs mt-2">
-            Tip: Replace <span class="highlight">example.com</span> in canonical/og:url with your real URL for best SEO.
-          </p>
         </footer>
       </main>
     </div>
 
-    <!-- Popup (will be moved to your tap position by JS) -->
+    <!-- Popup (moves to your tap position) -->
     <div id="lovePopup" class="love-popup" role="status" aria-live="polite">
       <div class="flex items-center gap-3">
         <div class="h-10 w-10 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center">
@@ -459,8 +491,8 @@
       // Advanced, Leap-Year-Safe Counter Logic (no date mistakes)
       // =======================================================
       const LOVE_START = new Date(2019, 7, 15, 17, 30, 0); // 2019-08-15 5:30 PM (local)
-      const UMAIR_DOB = { year: 2002, month: 6, day: 18 };   // 2002-06-18
-      const RAHFATH_DOB = { year: 2002, month: 3, day: 22 }; // 2002-03-22
+      const UMAIR_DOB = { year: 2002, month: 6, day: 18 };
+      const RAHFATH_DOB = { year: 2002, month: 3, day: 22 };
       const MS = { sec: 1000, min: 60000, hour: 3600000, day: 86400000 };
 
       function pad2(n) { return String(n).padStart(2, "0"); }
@@ -556,12 +588,33 @@
         setText(`${prefix}-minutes`, pad2(parts.minutes));
       }
 
+      // Small bottom-right clock
+      function formatTime(d) {
+        const hh = String(d.getHours()).padStart(2, "0");
+        const mm = String(d.getMinutes()).padStart(2, "0");
+        const ss = String(d.getSeconds()).padStart(2, "0");
+        return `${hh}:${mm}:${ss}`;
+      }
+      function formatDate(d) {
+        const yy = d.getFullYear();
+        const mo = String(d.getMonth() + 1).padStart(2, "0");
+        const da = String(d.getDate()).padStart(2, "0");
+        return `${yy}-${mo}-${da}`;
+      }
+      function updateClock(now) {
+        const t = document.getElementById("clockTime");
+        const dt = document.getElementById("clockDate");
+        if (t) t.textContent = formatTime(now);
+        if (dt) dt.textContent = formatDate(now);
+      }
+
       function tick() {
         const now = new Date();
         updateLoveDuration(now);
         updateNextAnniversary(now);
         updateBirthdayCountdown(now, UMAIR_DOB.month, UMAIR_DOB.day, "umair");
         updateBirthdayCountdown(now, RAHFATH_DOB.month, RAHFATH_DOB.day, "rahfath");
+        updateClock(now);
       }
 
       // =======================
@@ -575,7 +628,7 @@
       function initGSAP() {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         gsap.from("header h1", { y: 18, opacity: 0, duration: 0.9, ease: "power3.out" });
-        gsap.from("header p, header .mt-7 span", { y: 10, opacity: 0, duration: 0.8, delay: 0.15, ease: "power3.out", stagger: 0.06 });
+        gsap.from("header p", { y: 10, opacity: 0, duration: 0.8, delay: 0.15, ease: "power3.out", stagger: 0.06 });
 
         gsap.to(".love-card", {
           boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 18px 55px rgba(236,72,153,0.14)",
@@ -640,11 +693,11 @@
       }
 
       // =======================
-      // Tap logic (show popup at tap point)
+      // Tap logic (popup at tap point)
       // =======================
-      const TAP_WINDOW_MS = 1200;     // must tap 6 times within 1.2s
-      const TAP_COUNT = 6;            // "more than 5" => 6
-      const TAP_COOLDOWN_MS = 1800;   // avoid spam
+      const TAP_WINDOW_MS = 1200;
+      const TAP_COUNT = 6;
+      const TAP_COOLDOWN_MS = 1800;
 
       let tapTimes = [];
       let lastTriggeredAt = 0;
@@ -691,13 +744,7 @@
         gsap.killTweensOf(ring);
         gsap.set(ring, { left: x, top: y, opacity: 0, width: 18, height: 18 });
         gsap.to(ring, { opacity: 1, duration: 0.08, ease: "power1.out" });
-        gsap.to(ring, {
-          width: 170,
-          height: 170,
-          opacity: 0,
-          duration: 0.7,
-          ease: "power2.out"
-        });
+        gsap.to(ring, { width: 170, height: 170, opacity: 0, duration: 0.7, ease: "power2.out" });
       }
 
       function showPopupAtPoint(x, y) {
@@ -708,7 +755,6 @@
         const popup = document.getElementById("lovePopup");
         if (!popup) return;
 
-        // Measure popup size
         popup.style.opacity = "0";
         popup.style.left = "0px";
         popup.style.top = "0px";
@@ -718,15 +764,12 @@
         const rect = popup.getBoundingClientRect();
         const pad = 14;
 
-        // Clamp position so popup stays inside screen
         const safeX = clamp(x, rect.width / 2 + pad, window.innerWidth - rect.width / 2 - pad);
 
-        // Put popup above tap by default, but if too close to top, put below
+        const wouldOverflowTop = (y - rect.height) < pad;
         let safeY = y;
-        const aboveY = y - 12; // using translate(-50%, -115%) already lifts it up
-        const wouldOverflowTop = (aboveY - rect.height) < pad;
+
         if (wouldOverflowTop) {
-          // place below tap
           popup.style.transform = "translate(-50%, 18%)";
           safeY = clamp(y, pad, window.innerHeight - rect.height - pad);
         } else {
@@ -734,18 +777,14 @@
           safeY = clamp(y, rect.height + pad, window.innerHeight - pad);
         }
 
-        // Set popup to the tap point (clamped)
         gsap.killTweensOf(popup);
         gsap.set(popup, { left: safeX, top: safeY, opacity: 0, y: 10, scale: 0.98 });
 
-        // Vibrate (if mobile)
         try { if (navigator.vibrate) navigator.vibrate(30); } catch {}
 
-        // Animate in and out
         gsap.to(popup, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "power2.out" });
         gsap.to(popup, { opacity: 0, y: 10, scale: 0.98, duration: 0.32, ease: "power2.in", delay: 2.1 });
 
-        // Effects around that exact area
         showTapRing(x, y);
         heartBurst(x, y, 16);
       }
@@ -753,7 +792,6 @@
       function registerTap(x, y) {
         const now = Date.now();
         lastTapPoint = { x, y };
-
         tapTimes.push(now);
         tapTimes = tapTimes.filter((t) => now - t <= TAP_WINDOW_MS);
 
@@ -774,13 +812,11 @@
       function handlePointer(e) {
         const p = getPointFromEvent(e);
         registerTap(p.x, p.y);
-
-        // small effect on every tap
         spawnTapHeart(p.x, p.y);
         showTapRing(p.x, p.y);
       }
 
-      // Init everything
+      // Init
       addBlobs();
       initAOS();
       initGSAP();
