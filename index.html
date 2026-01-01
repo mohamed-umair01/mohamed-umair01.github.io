@@ -19,7 +19,6 @@
     <meta name="theme-color" content="#0b1020" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <!-- Canonical (your real URL) -->
     <link rel="canonical" href="https://mohamed-umair01.github.io/" />
 
     <!-- Open Graph -->
@@ -77,14 +76,8 @@
     </script>
 
     <!-- Animate.css + AOS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -182,7 +175,7 @@
         filter: drop-shadow(0 10px 20px rgba(251, 113, 133, 0.25));
       }
 
-      /* Ripple ring around the touch point */
+      /* Ripple ring */
       .tap-ring {
         position: fixed;
         z-index: 75;
@@ -198,7 +191,7 @@
         opacity: 0;
       }
 
-      /* Popup that appears at tap location */
+      /* Popup at tap location */
       .love-popup {
         position: fixed;
         z-index: 90;
@@ -255,7 +248,6 @@
       }
     </style>
 
-    <!-- Structured Data (SEO) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -296,7 +288,6 @@
 
     <div class="relative z-10">
       <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
-        <!-- Top bar -->
         <div class="flex items-center justify-between gap-4 mb-10">
           <div class="flex items-center gap-3">
             <div class="h-10 w-10 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center shadow-glow2">
@@ -314,12 +305,11 @@
               Live counter
             </span>
             <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-2">
-              👆 Tap fast x6 for surprise
+              👆 Tap x3 fast for surprise
             </span>
           </div>
         </div>
 
-        <!-- Hero -->
         <header class="text-center mb-12">
           <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-300 via-pink-200 to-indigo-200">Umair</span>
@@ -337,7 +327,6 @@
           </p>
         </header>
 
-        <!-- Cards -->
         <section aria-label="Love Journey Cards">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div class="love-card shine tilt rounded-2xl p-6 shadow-glow2" data-aos="fade-up" data-aos-delay="0">
@@ -444,9 +433,6 @@
                 <p class="mt-3 text-sm text-white/75">Time</p>
                 <p class="text-lg font-bold highlight">5:30 PM</p>
               </div>
-              <div class="mt-4 text-xs text-white/70">
-                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-3 py-2">💞 Always & Forever</span>
-              </div>
             </div>
 
             <div class="love-card shine tilt rounded-2xl p-6 shadow-glow2 flex items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
@@ -456,7 +442,7 @@
                 <div class="mt-4 inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-white/7 border border-white/12 shadow-glow">
                   <span class="text-3xl animate__animated animate__pulse animate__infinite" aria-hidden="true">❤</span>
                 </div>
-                <p class="mt-4 text-xs text-white/60">Tap anywhere fast 3 times 💗</p>
+                <p class="mt-4 text-xs text-white/60">Tap 3 times quickly 💗</p>
               </div>
             </div>
           </div>
@@ -488,7 +474,7 @@
 
     <script>
       // =======================================================
-      // Advanced, Leap-Year-Safe Counter Logic (no date mistakes)
+      // Counters (Leap-Year-Safe)
       // =======================================================
       const LOVE_START = new Date(2019, 7, 15, 17, 30, 0); // 2019-08-15 5:30 PM (local)
       const UMAIR_DOB = { year: 2002, month: 6, day: 18 };
@@ -588,7 +574,6 @@
         setText(`${prefix}-minutes`, pad2(parts.minutes));
       }
 
-      // Small bottom-right clock
       function formatTime(d) {
         const hh = String(d.getHours()).padStart(2, "0");
         const mm = String(d.getMinutes()).padStart(2, "0");
@@ -629,15 +614,6 @@
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         gsap.from("header h1", { y: 18, opacity: 0, duration: 0.9, ease: "power3.out" });
         gsap.from("header p", { y: 10, opacity: 0, duration: 0.8, delay: 0.15, ease: "power3.out", stagger: 0.06 });
-
-        gsap.to(".love-card", {
-          boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 18px 55px rgba(236,72,153,0.14)",
-          duration: 2.8,
-          yoyo: true,
-          repeat: -1,
-          ease: "sine.inOut",
-          stagger: 0.08
-        });
       }
 
       function initTilt() {
@@ -665,16 +641,11 @@
           el.className = "heart-float select-none";
           el.textContent = heartChars[Math.floor(Math.random() * heartChars.length)];
 
-          const left = Math.random() * 100;
-          const size = 14 + Math.random() * 28;
-          const duration = 12 + Math.random() * 18;
-          const delay = Math.random() * 10;
-
-          el.style.left = left + "vw";
+          el.style.left = (Math.random() * 100) + "vw";
           el.style.bottom = (-10 - Math.random() * 35) + "vh";
-          el.style.fontSize = size + "px";
-          el.style.animationDuration = duration + "s";
-          el.style.animationDelay = delay + "s";
+          el.style.fontSize = (14 + Math.random() * 28) + "px";
+          el.style.animationDuration = (12 + Math.random() * 18) + "s";
+          el.style.animationDelay = (Math.random() * 10) + "s";
 
           layer.appendChild(el);
         }
@@ -693,13 +664,15 @@
       }
 
       // =======================
-      // Tap logic (popup at tap point)
+      // Tap logic (3 taps CONTINUOUSLY)
+      // - if there is a gap > GAP_MS, reset to 0
       // =======================
-      const TAP_WINDOW_MS = 1200;
       const TAP_COUNT = 3;
-      const TAP_COOLDOWN_MS = 1800;
+      const GAP_MS = 450;           // max gap allowed between taps
+      const POPUP_COOLDOWN_MS = 1600;
 
-      let tapTimes = [];
+      let tapCount = 0;
+      let lastTapAt = 0;
       let lastTriggeredAt = 0;
       let lastTapPoint = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
@@ -749,7 +722,7 @@
 
       function showPopupAtPoint(x, y) {
         const now = Date.now();
-        if (now - lastTriggeredAt < TAP_COOLDOWN_MS) return;
+        if (now - lastTriggeredAt < POPUP_COOLDOWN_MS) return;
         lastTriggeredAt = now;
 
         const popup = document.getElementById("lovePopup");
@@ -780,10 +753,10 @@
         gsap.killTweensOf(popup);
         gsap.set(popup, { left: safeX, top: safeY, opacity: 0, y: 10, scale: 0.98 });
 
-        try { if (navigator.vibrate) navigator.vibrate(30); } catch {}
+        try { if (navigator.vibrate) navigator.vibrate(25); } catch {}
 
         gsap.to(popup, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "power2.out" });
-        gsap.to(popup, { opacity: 0, y: 10, scale: 0.98, duration: 0.32, ease: "power2.in", delay: 2.1 });
+        gsap.to(popup, { opacity: 0, y: 10, scale: 0.98, duration: 0.32, ease: "power2.in", delay: 2.0 });
 
         showTapRing(x, y);
         heartBurst(x, y, 16);
@@ -791,12 +764,19 @@
 
       function registerTap(x, y) {
         const now = Date.now();
-        lastTapPoint = { x, y };
-        tapTimes.push(now);
-        tapTimes = tapTimes.filter((t) => now - t <= TAP_WINDOW_MS);
 
-        if (tapTimes.length >= TAP_COUNT) {
-          tapTimes = [];
+        // If gap too big -> reset (fresh start)
+        if (tapCount > 0 && (now - lastTapAt) > GAP_MS) {
+          tapCount = 0;
+        }
+
+        tapCount += 1;
+        lastTapAt = now;
+        lastTapPoint = { x, y };
+
+        // Trigger only when EXACTLY 3 continuous taps happen
+        if (tapCount >= TAP_COUNT) {
+          tapCount = 0; // reset immediately after trigger
           showPopupAtPoint(lastTapPoint.x, lastTapPoint.y);
         }
       }
